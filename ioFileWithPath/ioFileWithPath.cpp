@@ -5,11 +5,15 @@ using namespace std;
 
 int main() {
 	string baris;
+	string namafile;
+
+	cout << "masukkan nama file : ";
+	cin >> namafile;
 
 	//membuaka file dalam mode menulis 
 	ofstream outfile;
 	//menunjukkan ke sebuah nama file 
-	outfile.open("contohfile.txt");
+	outfile.open(namafile + ".txt" , ios::out);
 
 	cout << ">= menulis file, \'q\' untuk keluar" << endl;
 
@@ -44,5 +48,7 @@ int main() {
 		//tutup file tersebut setelah selesai 
 		infile.close();
 	}
-	
+	//jika tidak di temukan file maka akan menampilkan ini
+	else cout << "unable to open file";
+	return 0;
 }
